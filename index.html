@@ -31,10 +31,21 @@
     </div>
 
     <script>
-        // Hier kun je later JavaScript code toevoegen om de hartslaggegevens op te halen
-        // Voor nu gebruiken we een dummy hartslag
-        let heartRate = 72; // Vervang dit door dynamische gegevens van je device
-        document.getElementById('heart-rate').innerText = heartRate;
-    </script>
+    // Functie om hartslaggegevens van een API op te halen
+    async function fetchHeartRate() {
+        try {
+            const response = await fetch('https://api.example.com/heart-rate');  // API URL aanpassen
+            const data = await response.json();
+            const heartRate = data.heartRate;  // Pas aan op basis van de API-respons
+            document.getElementById('heart-rate').innerText = heartRate;
+        } catch (error) {
+            console.error("Er is een fout opgetreden bij het ophalen van de hartslag:", error);
+        }
+    }
+
+    // Haal de hartslag om de paar seconden op
+    setInterval(fetchHeartRate, 5000); // Ophaalt elke 5 seconden
+</script>
+
 </body>
 </html>
