@@ -3,11 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Mirror API</title>
+    <title>Smart Mirror</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            position: relative;
+            display: inline-block;
+            margin-top: 100px;
+        }
+        .heart-rate {
+            font-size: 48px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welkom op mijn Smart Mirror project</h1>
-    <p>Deze site is gemaakt voor het verkrijgen van toegang tot de API voor mijn slimme spiegel project.</p>
-    <p>Als je toegang wilt aanvragen, kun je naar de API-aanvraagpagina gaan.</p>
+    <div class="container">
+        <h1>Smart Mirror</h1>
+        <div class="heart-rate">
+            <p>Current Heart Rate: <span id="heart-rate">--</span> BPM</p>
+        </div>
+    </div>
+
+    <script>
+        // Hier kun je later JavaScript code toevoegen om de hartslaggegevens op te halen
+        // Voor nu gebruiken we een dummy hartslag
+        let heartRate = 72; // Vervang dit door dynamische gegevens van je device
+        document.getElementById('heart-rate').innerText = heartRate;
+    </script>
 </body>
 </html>
